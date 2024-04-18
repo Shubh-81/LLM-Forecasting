@@ -1,6 +1,6 @@
 # Air Quality Forecasting using Large Language Models
 
-**Author:** Shubh Agarwal - 21110205
+**Author:** Shubh Agarwal - 21110205, Ishva Patel - 21110082
 
 ## Problem Definition
 
@@ -16,10 +16,13 @@ The project aims to utilize large language models for air quality forecasting, s
 
 The code is structured as follows:
 
-- `llmtime.ipynb`: Contains the implementation of LLMTime model using LLMs including LLama2 and Mistral-7B-v0.1. 
-- `few-shot.ipynb`: Contains the implementation of Few Shot learning using Langchain on Mistral-7B-v0.1, Mistral-7B-Instruct-v0.2 and Mixtral-8x7B-Instruct-v0.1. Documentation for the LLMTime class initialization in few-shot.ipynb:
+- `zero_shot.ipynb`: Contains the implementation of Zero Shot Time Series Forecasting in which we can plug in any model from HuggingFace from choice. 
 
-The LLMTime class in `few-shot.ipynb` is used for time series forecasting using large language models, specifically utilizing the next-token prediction capabilities of Large Language Models. The class is initialized with the following parameters:
+- `few-shot.ipynb`: Contains the implementation of Few Shot learning using Langchain on any model from HuggingFace. 
+
+- `few-shot-outlines.ipynb`: Contains the implementation of Few Shot learning using structured output using Outlines library on any model from HuggingFace.
+
+The inputs of the LLMTime Class are as follows:
 
 - `train`: The training data for the time series forecasting.
 - `test`: The test data for the time series forecasting.
@@ -31,26 +34,23 @@ The LLMTime class in `few-shot.ipynb` is used for time series forecasting using 
 - `do_sample`: A boolean parameter used in the HuggingFace model. Default value is True.
 - `model_name`: The name of the HuggingFace model to be used. Default value is "mistralai/Mistral-7B-v0.1".
 - `repetition_penalty`: The repetition penalty parameter used in the HuggingFace model. Default value is 1.0.
-
-The class has the following methods:
-
-- `get_scaler`: A static method used to get the scaler for the data.
-- `convert_array_to_string`: A method used to convert an array to a string.
-- `preprocess_data`: A method used to preprocess the data.
-- `few_shot`: A method used to perform few-shot learning.
+- `load_in_4bit`: Option to use quantizied models. Default value is True.
+- `num_samples`: Number of samples to be taken. Defaults to 10.
 
 ## Results
 
-Some of the preliminary results obtained are as follows:
+Some of the results obtained are as follows:
 
-Simle Sine Function:
-![Sine Curve](plots/mistral-few-shot-2024-02-12_14-38-39.png)
+Sine + Cosine Function:
+![Sine + Cosine Curve](zero_shot_results/Sine+Cosine/mistral-7b-v0.1/Mistral-7B-v0.1-zero-shot-2024-04-06_14-10-16-831.png)
 
-Mauna Loa CO2:
-![Mauna Loa CO2](plots/mistral-few-shot-2024-02-12_14-47-19.png)
+Gas Rate CO2 Dataset (Multivariate):
+![Gas Rate CO2](zero_shot_results/GreenHouseCO2/gemma-2b/gemma-2b-zero-shot-2024-03-24_13-15-53-631.png)
 
 These were some promising results, but further analysis is required to validate the performance of the models.
-Further plots can be found in the `plots` directory.
+Further plots can be found in the `zero_shot_results` and `few_shot_results` directory. Baseline results can be found in the `lstm_results` and `arima_results` directory.
+
+Datasets used for testing can be found in `datasets.ipynb`. Furthe code for obtaining baseline LSTM results can be found in `lstm.ipynb`.
 
 ## References
 
