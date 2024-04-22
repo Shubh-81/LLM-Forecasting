@@ -1,16 +1,8 @@
-# Air Quality Forecasting using Large Language Models
+# Time Series Forecasting Using Large Language Models
 
-**Author:** Shubh Agarwal - 21110205, Ishva Patel - 21110082
+Time series forecasting plays a crucial role across a wide range of domains, from finance and healthcare to climate science and industrial production. This project explores a novel approach to time series forecasting using Large Language Models (LLMs). By harnessing the power of LLMs' next-token prediction capabilities, we aim to simplify the forecasting process and improve accuracy for diverse time series datasets.
 
-## Problem Definition
-
-The project aims to utilize large language models for air quality forecasting, specifically leveraging the next-token prediction capabilities of Large Language Models for time series forecasting.
-
-## Preliminary Literature
-
-1. **Large Language Models Are Zero-Shot Time Series Forecasters Paper by NYU:** The paper discusses the use of large language models for time series forecasting, specifically focusing on next token prediction for time series forecasting.
-2. **Zero-Shot Time Series Forecasting using Transformers - Moment MOMENT: A Family of Open Time-Series Foundation Models (CMU):** The paper discusses the use of transformers for time series forecasting, specifically focusing on the Moment MOMENT framework.
-3. **Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting:** The paper presents Lag-Llama, a foundation model for univariate probabilistic time series forecasting based on a decoder-only transformer architecture that uses lags as covariates.
+LLMs have emerged as powerful tools for modelling sequential data thanks to their ability to capture complex patterns and distributions. Pretrained on vast and diverse datasets, LLMs inherently grasp intricate temporal dependencies and exhibit biases favouring simplicity and repetition. Leveraging their transformer architecture, we aim to push the boundaries of traditional forecasting methods and uncover insights for effective prediction in various real-world applications.
 
 ## Code Structure
 
@@ -47,10 +39,14 @@ Sine + Cosine Function:
 Gas Rate CO2 Dataset (Multivariate):
 ![Gas Rate CO2](zero_shot_results/GreenHouseCO2/gemma-2b/gemma-2b-zero-shot-2024-03-24_13-15-53-631.png)
 
-These were some promising results, but further analysis is required to validate the performance of the models.
-Further plots can be found in the `zero_shot_results` and `few_shot_results` directory. Baseline results can be found in the `lstm_results` and `arima_results` directory.
+Further plots can be found in the `zero_shot_results` and `few_shot_results` directory.  
+Baseline results can be found in the `lstm_results` and `arima_results` directory.  
 
-Datasets used for testing can be found in `datasets.ipynb`. Furthe code for obtaining baseline LSTM results can be found in `lstm.ipynb`.
+Datasets used for testing can be found in `datasets.ipynb`. Further code for obtaining baseline LSTM results can be found in `lstm.ipynb`.
+
+## Collaboration and License
+
+We welcome collaboration and contributions from the community to enhance our project. Feel free to fork and submit pull requests to improve the codebase or suggest new features. This project is licensed under the terms of the [MIT License](LICENSE), ensuring openness and accessibility to all.
 
 ## References
 
